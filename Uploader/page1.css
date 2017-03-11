@@ -17,3 +17,8 @@
 				font-family: roboto;
 				color: white;
 			}
+			.loginbutton
+			{
+					display:inline-block;
+					color : white;
+			}
