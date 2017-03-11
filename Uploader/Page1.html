@@ -5,19 +5,40 @@
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
       	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       	<link rel="stylesheet" type="text/css" href="page1.css">
+      	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      	<script type='text/javascript'>
+      	function show()
+      	{
+      		 document.getElementById("showpass").setAttribute('type', "text");
+      	}
+      	function hide()
+      	{
+      		 document.getElementById("showpass").setAttribute('type', "password");
+      	}
+      	function validate()
+      	{
+      		if(document.forms["login"]["email"].value == "" || document.forms["login"]["password"].value == "")
+      		{
+      			alert("Enter Email and Password");
+      		}
+      	}
+		</script>
     </head>
 	<body bgcolor="#b2ebf2">
-		      <div class="card-panel cyan darken-2" style="font-family:'lobster'">
+		    <div class="card-panel cyan darken-2" style="font-family:'lobster'">
 		      		<font size=20>Smart Evaluator</font>
-		      		<div class="email">
-		      			<input type="text" placeholder="Email" name="email">
-		      		</div>
-		      		<div class="pass">
-		      			<input type="text" placeholder="Password" name="password">
-		      		</div>
-		      		<a href=""><div class="loginbutton"><i class="material-icons">send</i></div></a>
-		      		<a href=""><div class="forget">forgot password?</div></a>
+		      		<form  name="login" action="" method="post" class="formalign">
+		      		<div class="email"><input type="text" placeholder="Email" name="email"></div>
+		      		<div class="pass" ><input type="password" placeholder="Password" name="password" id="showpass"></div>
+		      		</form>
+		      		<div class="buttoninvisible"><button class="material-icons" onmouseup="hide()" onmousedown="show()" id="transparentbutton">visibility</button></div>
+		      		<div class="buttoninvisible"><button class="material-icons" onclick="validate()" id="transparentbutton">send</button></div>
+		      		
 
-		      </div>
+		      
+		      		<a href=""><div class="newuser">New User</div></a>
+					<a href=""><div class="forget">forgot password?</div></a>
+
+			</div>
 	</body>
 </html>
